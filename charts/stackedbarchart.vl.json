@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Fire Area vs Forest Area by State",
+  "data": {
+    "url": "https://raw.githubusercontent.com/chongps17/3179/refs/heads/main/data/fire_forest_data.csv"
+  },
+  "transform": [
+    {"fold": ["fire_area", "forest_area"], "as": ["area_type", "area_value"]}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {"field": "state", "type": "nominal", "title": "State"},
+    "x": {"field": "area_value", "type": "quantitative", "title": "Area (km²)", "stack": "normalize"},
+    "color": {
+      "field": "area_type",
+      "type": "nominal",
+      "title": "Area Type",
+      "scale": {
+        "domain": ["fire_area", "forest_area"],
+        "range": ["#e45756", "#72b7b2"]
+      }
+    },
+    "tooltip": [
+      {"field": "state", "title": "State"},
+      {"field": "area_type", "title": "Type"},
+      {"field": "area_value", "title": "Area (km²)"}
+    ]
+  },
+  "config": {
+    "axis": {"labelFontSize": 12, "titleFontSize": 14},
+    "legend": {"titleFontSize": 13, "labelFontSize": 12}
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Percentage of Forest Area by State",
+  "data": {
+    "url": "https://raw.githubusercontent.com/chongps17/3179/refs/heads/main/data/fire_forest_data.csv"
+  },
+  "mark": {"type": "arc", "outerRadius": 150},
+  "encoding": {
+    "theta": {
+      "field": "percent_forest",
+      "type": "quantitative",
+      "title": "Percent Forest"
+    },
+    "color": {
+      "field": "state",
+      "type": "nominal",
+      "title": "State"
+    },
+    "tooltip": [
+      {"field": "state", "title": "State"},
+      {"field": "percent_forest", "type": "quantitative", "title": "% Forest"}
+    ]
+  },
+  "view": {"stroke": null}
+}
