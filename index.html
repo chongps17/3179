@@ -2,10 +2,41 @@
 <html>
 <head>
     <title>Australian Bushfires</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+
 </head>
 <body>
+    <h1 style="font-family:Calibri">Australian Bushfires</h1>
 
-    <h1>Fires Across Australia</h1>
-    <p>plop</p>
+    <section>
+        <h2 style="font-family:Calibri">Fires detected across Australia</h2>
+        <p style="font-family:Calibri">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, 
+            nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
+            Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, 
+            imperdiet a, venenatis vitae, justo. </p>
+        <div id = "dotmap" class = "chart"></div>
+    </section>
+
+    <section>
+        <h2 style="font-family:Calibri">Proportion of forested areas in fires</h2>
+        <div id = "stackedbar" class = "chart"></div>
+        <p style="font-family:Calibri"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, 
+            nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
+            Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut. </p>
+        
+        <div id = "pie" class = "chart"></div>
+
+    </section>
+
+    <script>
+        vegaEmbed("#stackedbar", "charts/stackedbarchart.vl.json", {actions: false});
+        vegaEmbed("#dotmap", "charts/dotmap.vl.json", {actions: false});
+        vegaEmbed("#pie", "charts/piechart.vl.json", {actions: false});
+    </script>
+
+
 </body>
 </html>
