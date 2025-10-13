@@ -6,9 +6,69 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
+      <!-- Styling -->
+  <style>
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      padding: 40px 60px;
+    }
+
+    /* === Headings === */
+    h1 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-top: 0;
+      color: #222;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      color: #444;
+      margin-top: 2.2rem;
+      padding-left: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+
+    .chart {
+      margin-top: 10px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+      .container {
+        padding: 30px 25px;
+      }
+    }
+  </style>
 
 </head>
 <body>
+    <div class = "container">
     <h1 style="font-family:Calibri">Australian Bushfires</h1>
 
     <section>
@@ -20,16 +80,22 @@
         <div id = "dotmap" class = "chart"></div>
     </section>
 
-    <section>
+    <section class = "two-col">
+        <div>
         <h2 style="font-family:Calibri">Proportion of forested areas in fires</h2>
         <div id = "stackedbar" class = "chart"></div>
         <p style="font-family:Calibri"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, 
             nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
             Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut. </p>
-        
-        <div id = "pie" class = "chart"></div>
-
+        </div>
     </section>
+
+    <section>
+        <h2 style="font-family:Calibri">Percentage of forested areas in bushfires</h2>
+        <p style="font-family:Calibri">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
+        <div id = "pie" class = "chart"></div>
+    </section>
+    </div>
 
     <script>
         vegaEmbed("#stackedbar", "charts/stackedbarchart.vl.json", {actions: false});
