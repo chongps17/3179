@@ -4,7 +4,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/chongps17/3179/refs/heads/main/data/fire_forest_data.csv"
   },
-  "mark": {"type": "arc", "outerRadius": 150},
+  "mark": {"type": "arc", "outerRadius": 100},
   "encoding": {
     "theta": {
       "field": "percent_forest",
