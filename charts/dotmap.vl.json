@@ -31,10 +31,10 @@
           "encoding": {
             "longitude": { "field": "longitude", "type": "quantitative" },
             "latitude":  { "field": "latitude",  "type": "quantitative" },
-            "color": { "field": "brightness", "type": "quantitative", "scale": { "scheme": "inferno" } },
-            "size": { "field": "frp", "type": "quantitative", "scale": { "range": [10, 200] } },
+            "color": { "field": "brightness", "type": "quantitative", "scale": { "scheme": "reds", "domain": [200, 500]} },
+            "size": { "field": "frp", "type": "quantitative", "scale": { "range": [50, 1500] } },
             "tooltip": [
-              {"field":"acq_date"}, {"field":"acq_time"},
+              {"field":"acq_date", "timeUnit": "utcyearmonthdate"}, {"field":"acq_time"},
               {"field":"brightness"}, {"field":"frp"},
               {"field":"latitude"}, {"field":"longitude"}
             ]
@@ -53,12 +53,14 @@
           "select": { "type": "interval", "encodings": ["x"] }
         }
       ],
-      "mark": "bar",
+      "mark": {"type": "bar",
+              "color": "#ffa29c"},
       "encoding": {
         "x": {
           "field": "acq_date",
           "type": "temporal",
-          "title": "Range of dates recorded"
+          "title": "Range of dates recorded",
+          "timeUnit": "utcyearmonthdate"
         },
         "y": { "aggregate": "count", "title": "Count of fires" },
         "tooltip": [
