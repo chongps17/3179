@@ -31,12 +31,12 @@
           "encoding": {
             "longitude": { "field": "longitude", "type": "quantitative" },
             "latitude":  { "field": "latitude",  "type": "quantitative" },
-            "color": { "field": "brightness", "type": "quantitative", "scale": { "scheme": "reds", "domain": [200, 500]} },
-            "size": { "field": "frp", "type": "quantitative", "scale": { "range": [50, 1500] } },
+            "color": { "field": "brightness", "type": "quantitative", "scale": { "scheme": "reds", "domain": [200, 500]}, "title": "Brightness" },
+            "size": { "field": "frp", "type": "quantitative", "scale": { "range": [50, 1500] }, "title": "FRP (Intensity)" },
             "tooltip": [
-              {"field":"acq_date", "timeUnit": "utcyearmonthdate"}, {"field":"acq_time"},
-              {"field":"brightness"}, {"field":"frp"},
-              {"field":"latitude"}, {"field":"longitude"}
+              {"field":"acq_date", "timeUnit": "utcyearmonthdate", "title": "Date"},
+              {"field":"brightness", "title": "Brightness"}, {"field":"frp", "title": "FRP (Intensity)"},
+              {"field":"latitude", "title": "Latitude"}, {"field":"longitude", "title": "Longitude"}
             ]
           }
         }
@@ -54,7 +54,7 @@
         }
       ],
       "mark": {"type": "bar",
-              "color": "#ffa29c"},
+              "color": "#da4f45"},
       "encoding": {
         "x": {
           "field": "acq_date",

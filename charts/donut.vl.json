@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Day vs Night Fire Detections",
+  "width": 360,
+  "height": 260,
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/chongps17/3179/main/data/fire_archive_M6_96619.csv",
+    "format": {"type": "csv"}
+  },
+
+  "transform": [
+    {
+      "calculate": "datum.daynight == 'D' ? 'Day' : 'Night'",
+      "as": "daynightlabel"
+    },
+    {
+      "aggregate": [{"op": "count", "as": "fire_count"}],
+      "groupby": ["daynightlabel"]
+    }
+  ],
+
+  "layer": [
+    {
+      "mark": {"type": "arc", "innerRadius": 100},
+      "encoding": {
+        "theta": {"field": "fire_count", "type": "quantitative"},
+        "color": {
+          "field": "daynightlabel",
+          "type": "nominal",
+          "title": "Time of Detection",
+          "scale": {"range": ["#da4f45", "#428bd4"]}
+        },
+        "tooltip": [
+          {"field": "daynightlabel", "title": "Time of Day"},
+          {"field": "fire_count", "title": "Fire Count"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "text": "Total Fires: 36,011",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "align": "center",
+        "baseline": "middle"
+      }
+    }
+  ]
+}
