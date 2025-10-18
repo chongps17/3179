@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "FRP vs Brightness with a date selector and readable day/night labels",
+  "width": 550,
+  "height": 350,
+  "title": {"text": "Fire Radiative Power (FRP) vs Brightness (K) between 1 August 2019 to 30 September 2019"},
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/chongps17/3179/main/data/fire_archive_M6_96619.csv"
+  },
+
+  "params": [
+    {
+      "name": "date_selection",
+      "value": "2019-08-01",
+      "bind": { "input": "date", "name": "Select date: " }
+    }
+  ],
+
+  "transform": [
+    { "calculate": "datum.acq_date", "as": "acq_date_str" },
+    { "filter": "datum.acq_date_str == date_selection" },
+    {
+      "calculate": "datum.daynight == 'D' ? 'Day' : 'Night'",
+      "as": "DayNightLabel"
+    }
+  ],
+
+  "mark": {"type": "point", "filled": true, "opacity": 0.65, "size": 43},
+
+  "encoding": {
+    "x": { "field": "brightness", "type": "quantitative", "title": "Brightness (K)", "scale": {"domain": [260, 480]} },
+    "y": { "field": "frp", "type": "quantitative", "title": "Fire Radiative Power (FRP)" },
+    "color": { "field": "DayNightLabel", "type": "nominal", "title": "Time of Detection", "scale": {"range": ["#da4f45", "#428bd4"] }},
+    "tooltip": [
+      {"field": "acq_date", "title": "Date"},
+      {"field": "brightness", "title": "Brightness"},
+      {"field": "frp", "title": "Fire Radiative Power (FRP)"},
+      {"field": "satellite", "title": "Satellite"},
+      {"field": "DayNightLabel", "title": "Time of Detection"}
+    ]
+  }
+}

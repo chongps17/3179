@@ -2,21 +2,23 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Day vs Night Fire Detections",
   "width": 360,
-  "height": 260,
+  "height": 280,
 
   "data": {
     "url": "https://raw.githubusercontent.com/chongps17/3179/main/data/fire_archive_M6_96619.csv",
     "format": {"type": "csv"}
   },
 
+  "title": {"text": "Day vs Night Fire Detections"},
+
   "transform": [
     {
       "calculate": "datum.daynight == 'D' ? 'Day' : 'Night'",
-      "as": "daynightlabel"
+      "as": "day_night_label"
     },
     {
       "aggregate": [{"op": "count", "as": "fire_count"}],
-      "groupby": ["daynightlabel"]
+      "groupby": ["day_night_label"]
     }
   ],
 
@@ -26,13 +28,13 @@
       "encoding": {
         "theta": {"field": "fire_count", "type": "quantitative"},
         "color": {
-          "field": "daynightlabel",
+          "field": "day_night_label",
           "type": "nominal",
           "title": "Time of Detection",
           "scale": {"range": ["#da4f45", "#428bd4"]}
         },
         "tooltip": [
-          {"field": "daynightlabel", "title": "Time of Day"},
+          {"field": "day_night_label", "title": "Time of Day"},
           {"field": "fire_count", "title": "Fire Count"}
         ]
       }

@@ -31,11 +31,11 @@
           "encoding": {
             "longitude": { "field": "longitude", "type": "quantitative" },
             "latitude":  { "field": "latitude",  "type": "quantitative" },
-            "color": { "field": "brightness", "type": "quantitative", "scale": { "scheme": "reds", "domain": [200, 500]}, "title": "Brightness" },
-            "size": { "field": "frp", "type": "quantitative", "scale": { "range": [50, 1500] }, "title": "FRP (Intensity)" },
+            "color": { "field": "brightness", "type": "quantitative", "scale": { "scheme": "reds", "domain": [200, 500]}, "title": "Brightness (K)" },
+            "size": { "field": "frp", "type": "quantitative", "scale": { "range": [50, 1500] }, "title": "Fire Radiative Power (FRP)" },
             "tooltip": [
               {"field":"acq_date", "timeUnit": "utcyearmonthdate", "title": "Date"},
-              {"field":"brightness", "title": "Brightness"}, {"field":"frp", "title": "FRP (Intensity)"},
+              {"field":"brightness", "title": "Brightness (K)"}, {"field":"frp", "title": "Fire Radiative Power (FRP)"}, {"field": "satellite", "title": "Satellite"},
               {"field":"latitude", "title": "Latitude"}, {"field":"longitude", "title": "Longitude"}
             ]
           }
@@ -65,7 +65,7 @@
         "y": { "aggregate": "count", "title": "Count of fires" },
         "tooltip": [
           {"field":"acq_date","type":"temporal","title":"Date"},
-          {"aggregate":"count","title":"Detections"}
+          {"aggregate":"count","title":"Detections", "format": ","}
         ]
       }
     }
