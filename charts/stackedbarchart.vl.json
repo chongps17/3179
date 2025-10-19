@@ -1,11 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Fire Area vs Forest Area by State",
+  "width": 400,
+  "height": 250,
+  "title": {"text":"Forest vs non-forest area by state (2019-2020)", "anchor": "middle", "offset": 15},
   "data": {
     "url": "https://raw.githubusercontent.com/chongps17/3179/refs/heads/main/data/fire_forest_data.csv"
   },
   "transform": [
-    {"fold": ["fire_area", "forest_area"], "as": ["area_type", "area_value"]},
+    {"fold": ["forest", "non_forest"], "as": ["area_type", "area_value"]},
     {"filter": "datum.percent_forest > 0"}
   ],
   "mark": "bar",
@@ -17,18 +19,14 @@
       "type": "nominal",
       "title": "Area Type",
       "scale": {
-        "domain": ["fire_area", "forest_area"],
-        "range": ["#e45756", "#72b7b2"]
+        "domain": ["forest", "non_forest"],
+        "range": ["#da4f45", "#428bd4"]
       }
     },
     "tooltip": [
       {"field": "state", "title": "State"},
       {"field": "area_type", "title": "Type"},
-      {"field": "area_value", "title": "Area (km²)"}
+      {"field": "area_value", "title": "Area ('000 Hectares)"}
     ]
-  },
-  "config": {
-    "axis": {"labelFontSize": 12, "titleFontSize": 14},
-    "legend": {"titleFontSize": 13, "labelFontSize": 12}
   }
 }
