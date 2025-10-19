@@ -5,7 +5,8 @@
     "url": "https://raw.githubusercontent.com/chongps17/3179/refs/heads/main/data/fire_forest_data.csv"
   },
   "transform": [
-    {"fold": ["fire_area", "forest_area"], "as": ["area_type", "area_value"]}
+    {"fold": ["fire_area", "forest_area"], "as": ["area_type", "area_value"]},
+    {"filter": "datum.percent_forest > 0"}
   ],
   "mark": "bar",
   "encoding": {

@@ -1,9 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Percentage of Forest Area by State",
+  "title": {"text": "Percentage of forested area in Australian fires by state (2019-20)"},
   "data": {
     "url": "https://raw.githubusercontent.com/chongps17/3179/refs/heads/main/data/fire_forest_data.csv"
   },
+"transform": [
+    {"filter": "datum.percent_forest > 0"}
+  ],
   "mark": {"type": "arc", "outerRadius": 100},
   "encoding": {
     "theta": {
@@ -19,6 +22,7 @@
     "tooltip": [
       {"field": "state", "title": "State"},
       {"field": "percent_forest", "type": "quantitative", "title": "% Forest"}
+      
     ]
   },
   "view": {"stroke": null}

@@ -3,7 +3,8 @@
   "description": "FRP vs Brightness with a date selector and readable day/night labels",
   "width": 550,
   "height": 350,
-  "title": {"text": "Fire Radiative Power (FRP) vs Brightness (K) between 1 August 2019 to 30 September 2019"},
+  "title": {"text": "Fire Radiative Power (FRP) vs Brightness (K) between 1 August 2019 to 30 September 2019",
+            "offset": 15},
 
   "data": {
     "url": "https://raw.githubusercontent.com/chongps17/3179/main/data/fire_archive_M6_96619.csv"

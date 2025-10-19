@@ -9,7 +9,7 @@
     "format": {"type": "csv"}
   },
 
-  "title": {"text": "Day vs Night Fire Detections"},
+  "title": {"text": "Day vs Night Fire Detections", "offset": 15},
 
   "transform": [
     {
