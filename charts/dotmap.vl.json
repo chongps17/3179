@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {"text": "Fire detections in Australia between 1 August 2019 to 30 September 2019",
-  "anchor": "middle", "offset": 15}, 
+  "anchor": "middle", "offset": 15, "fontSize": 14}, 
   "vconcat": [
     {
       "width": 800,
@@ -31,7 +31,7 @@
           "encoding": {
             "longitude": { "field": "longitude", "type": "quantitative" },
             "latitude":  { "field": "latitude",  "type": "quantitative" },
-            "color": { "field": "brightness", "type": "quantitative", "scale": { "scheme": "reds", "domain": [200, 500]}, "title": "Brightness (K)" },
+            "color": { "field": "brightness", "type": "quantitative", "scale": { "scheme": "reds", "domain": [200, 500]}, "title": "Brightness (K)"},
             "size": { "field": "frp", "type": "quantitative", "scale": { "range": [50, 1500] }, "title": "Fire Radiative Power (FRP)" },
             "tooltip": [
               {"field":"acq_date", "timeUnit": "utcyearmonthdate", "title": "Date"},
@@ -46,7 +46,8 @@
     {
       "width": 800,
       "height": 100,
-      "title": {"text": "Use this bar chart to filter out the map based on dates"},
+      "title": {"text": "Use this bar chart to filter out the map based on dates", 
+    "anchor": "middle", "offset": 15, "fontSize": 14},
       "data": { "url": "https://raw.githubusercontent.com/chongps17/3179/main/data/fire_archive_M6_96619.csv" },
       "params": [
         {

@@ -13,7 +13,7 @@
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 40px auto;
       background: #ffff;
       border-radius: 14px;
@@ -25,20 +25,23 @@
     h1 {
       text-align: center;
       font-size: 2.4rem;
+      font-family: Calibri;
       margin-top: 0;
       color: #f54141;
     }
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       color: #f54141;
-      margin-top: 2.2rem;
+      font-family: Calibri;
+      margin-top: 1rem;
       padding-left: 10px;
     }
 
     p {
       line-height: 1.6;
-      font-size: 1rem;
+      font-size: 1.3rem;
+      font-family: Calibri;
       color: #333;
     }
 
@@ -54,51 +57,79 @@
 
     .two-col {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+  
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; 
       gap: 24px;
       align-items: start;
     }
 
-    @media (max-width: 900px) {
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-      .container {
-        padding: 30px 25px;
-      }
+    .intro-grid img {
+      width: 100%;
+      height: 260px;            
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
     }
+    
+    .image-source {
+      font-size: 0.9rem;
+      color: #4e4e4e;
+      margin-top: 6px;
+      text-align: start;
+    }
+
   </style>
 
 </head>
 <body>
     <div class = "container">
-    <h1 style="font-family:Calibri">Australian Bushfires</h1>
+    <h1>Australian Bushfires</h1>
 
     <section>
-        <h2 style="font-family:Calibri">Introduction</h2>
-        <p style="font-family:Calibri">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, 
-                    nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
-                    Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, 
-                    imperdiet a, venenatis vitae, justo. </p>
+        <h2>Introduction</h2>
+        <div class = "intro-grid">
+            <p>Due to Australia's geographical location, bushfires have become a prominent issue for Australians and the environment. These bushfires not only put the lives of Australians at risk but cause severe damage to Australia's wildlife and natural landscapes. This visualisation aims to explore the geographical 
+              location of fires across Australia, the characteristics of these fires and how they affect aspects of our enviroment such as our forests and water quality. </p>
+            
+            <div>
+              <img src = "images/nytimes_bushfire.jpg" alt = "Image of bushfire in Australia">
+              <p class = "image-source"> Source: <a href="https://www.nytimes.com/2020/01/10/world/australia/bushfire.html">The New York Times</a></p>
+
+            </div>   
+        </div>
+        
     </section>
 
     <section>
-        <h2 style="font-family:Calibri">Fires detected across Australia</h2>
+        <h2>Fires detected across Australia</h2>
         <div id = "dotmap" class = "chart" style = "text-align: center;"></div>
-        <p style="font-family:Calibri"><em>Brightness is an indication of the temperature of the fire while 'frp' is the intensity of the fire measured from satellite sensors</em></p>
-        <p style="font-family:Calibri">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, 
-                    nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
-                    Nulla consequat massa quis enim. </p>
+        <div class = "intro-grid">
+          <p>This map details the location of fires across Australia, with <strong>brightness</strong> indicating the temperature of the fire and <strong>Fire Radiative Power (FRP)</strong> indicating the intensity of the fire based on satellite signals. 
+            The time frame of fires shown on the map can be adjusted using the date brushing feature in the bar graph.</p>
+          
+          <p>The overall map shows that the majority of fires happen near the coast of Australian states with 
+            a particular density in Queensland, New South Wales and the Northern Territory. The bar graph also shows that the highest number of fires country-wide is around the first half of September in the data set which may be a result of seasonal changes.</p>
+        </div>
     </section>
 
     <section>
-        <h2 style="font-family:Calibri">Proportion of forested areas in fires</h2>
+      <h2>Day vs night fires</h2>
+      <div id = "scatter" class = "chart" style = "text-align: center;"></div>
+    </section>
+
+    <section>
+        <h2>Proportion of forested areas in fires</h2>
         <div class = "two-col">
             <div>
                 <div id = "stackedbar" class = "chart"></div>
             </div>
             <div>
-                <p style="font-family:Calibri">
+                <p>
                    Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.  
                 </p>
             </div>
@@ -106,8 +137,8 @@
     </section>
 
     <section>
-        <h2 style="font-family:Calibri">Percentage of forested areas in bushfires</h2>
-        <p style="font-family:Calibri">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
+        <h2>Percentage of forested areas in bushfires</h2>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
         <div id = "pie" class = "chart"></div>
     </section>
     </div>
@@ -116,6 +147,7 @@
         vegaEmbed("#stackedbar", "charts/stackedbarchart.vl.json", {actions: false});
         vegaEmbed("#dotmap", "charts/dotmap.vl.json", {actions: false});
         vegaEmbed("#pie", "charts/piechart.vl.json", {actions: false});
+        vegaEmbed("#scatter", "charts/scatter.vl.json", {actions: false});
     </script>
 
 
