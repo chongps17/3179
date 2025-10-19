@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 400,
+  "width": 300,
   "height": 250,
   "title": {"text":"Forest vs non-forest area by state (2019-2020)", "anchor": "middle", "offset": 15},
   "data": {
@@ -26,7 +26,7 @@
     "tooltip": [
       {"field": "state", "title": "State"},
       {"field": "area_type", "title": "Type"},
-      {"field": "area_value", "title": "Area ('000 Hectares)"}
+      {"field": "area_value", "title": "Area ('000 Hectares)", "format": ","}
     ]
   }
 }
