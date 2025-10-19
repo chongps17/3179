@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {"text": "Fire detections in Australia between 1 August 2019 to 30 September 2019",
-  "anchor": "middle", "offset": 15, "fontSize": 14}, 
+  "anchor": "middle", "offset": 15, "fontSize": 16}, 
   "vconcat": [
     {
       "width": 800,

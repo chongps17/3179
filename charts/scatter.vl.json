@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "FRP vs Brightness with a date selector and readable day/night labels",
-  "width": 550,
-  "height": 350,
+  "width": 750,
+  "height": 450,
   "title": {"text": "Fire Radiative Power (FRP) vs Brightness (K) between 1 August 2019 to 30 September 2019",
-            "offset": 15},
+            "offset": 15, "fontSize": 16},
 
   "data": {
     "url": "https://raw.githubusercontent.com/chongps17/3179/main/data/fire_archive_M6_96619.csv"
@@ -14,7 +14,7 @@
     {
       "name": "date_selection",
       "value": "2019-08-01",
-      "bind": { "input": "date", "name": "Select date: " }
+      "bind": { "input": "date", "name": "Select date: "}
     }
   ],
 

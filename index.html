@@ -6,6 +6,10 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
       <!-- Styling -->
   <style>
     body{
@@ -13,7 +17,7 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 40px auto;
       background: #ffff;
       border-radius: 14px;
@@ -25,7 +29,7 @@
     h1 {
       text-align: center;
       font-size: 2.4rem;
-      font-family: Calibri;
+      font-family: Poppins;
       margin-top: 0;
       color: #f54141;
     }
@@ -33,15 +37,15 @@
     h2 {
       font-size: 1.8rem;
       color: #f54141;
-      font-family: Calibri;
+      font-family: Poppins;
       margin-top: 1rem;
       padding-left: 10px;
     }
 
     p {
       line-height: 1.6;
-      font-size: 1.3rem;
-      font-family: Calibri;
+      font-size: 1.15rem;
+      font-family: Poppins;
       color: #333;
     }
 
@@ -83,6 +87,7 @@
       text-align: start;
     }
 
+
   </style>
 
 </head>
@@ -113,18 +118,43 @@
             The time frame of fires shown on the map can be adjusted using the date brushing feature in the bar graph.</p>
           
           <p>The overall map shows that the majority of fires happen near the coast of Australian states with 
-            a particular density in Queensland, New South Wales and the Northern Territory. The bar graph also shows that the highest number of fires country-wide is around the first half of September in the data set which may be a result of seasonal changes.</p>
+            a particular density in Queensland, New South Wales and the Northern Territory. The bar graph also shows that the highest number of fires country-wide is around the <strong>first half of September</strong> in the data set which may be a result of seasonal changes.</p>
         </div>
     </section>
 
     <section>
       <h2>Day vs night fires</h2>
-      <div id = "scatter" class = "chart" style = "text-align: center;"></div>
+      <div style = "text-align: center;">
+        <div id = "scatter" class = "chart" style = "text-align: center;"></div>
+
+      </div>
+      
+    </section>
+
+    <section>
+      <div class = "intro-grid">
+          <div>
+            <p>
+              Day time fires make up most reported fires in Australia, making up <strong>78.32%</strong> of fires recorded in the data set while nighttime fires only make up <strong>21.68%</strong>. 
+            </p>
+
+            <p>
+              Based on the scatterplot, there is a general trend that daytime fires have a higher intensity (FRP) and temperature (brightness) compared to nighttime fires. 
+              This may be the case as temperatures tend to peak during the day, resulting in higher temperature and intensity. 
+            </p>
+
+
+          </div>
+
+          <div style = "text-align: center;">
+            <div id = "donut" class = "chart"></div>
+          </div>
+      </div>
     </section>
 
     <section>
         <h2>Proportion of forested areas in fires</h2>
-        <div class = "two-col">
+        <div class = "intro-grid">
             <div>
                 <div id = "stackedbar" class = "chart"></div>
             </div>
@@ -148,6 +178,7 @@
         vegaEmbed("#dotmap", "charts/dotmap.vl.json", {actions: false});
         vegaEmbed("#pie", "charts/piechart.vl.json", {actions: false});
         vegaEmbed("#scatter", "charts/scatter.vl.json", {actions: false});
+        vegaEmbed("#donut", "charts/donut.vl.json", {actions: false});
     </script>
 
 

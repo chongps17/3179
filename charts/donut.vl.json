@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Day vs Night Fire Detections",
-  "width": 360,
+  "width": 300,
   "height": 280,
 
   "data": {
@@ -31,11 +31,12 @@
           "field": "day_night_label",
           "type": "nominal",
           "title": "Time of Detection",
-          "scale": {"range": ["#da4f45", "#428bd4"]}
+          "scale": {"range": ["#da4f45", "#428bd4"]},
+          "legend": null
         },
         "tooltip": [
           {"field": "day_night_label", "title": "Time of Day"},
-          {"field": "fire_count", "title": "Fire Count"}
+          {"field": "fire_count", "title": "Fire Count", "format": ","}
         ]
       }
     },
