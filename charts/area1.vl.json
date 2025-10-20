@@ -1,0 +1,77 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/chongps17/3179/refs/heads/main/data/nsw_lake_conjola_data.csv",
+    "format": {"type": "csv"}
+  },
+  "title": {"text": "Changes in Dissolved Oxygen (DO) in Lake Conjola during a fire (January 2020)",
+            "anchor": "middle", "offset": 15},
+
+  "vconcat": [
+    {
+      "width": 500,
+      "height": 250,
+      "mark": {"type": "area", "interpolate": "monotone", "color": "#da4f45"},
+      "transform": [
+        {
+          "calculate": "toDate(utcParse(datum.DateTime, '%d/%m/%Y %H:%M'))",
+          "as": "dt"},
+        {"filter": "isValid(datum.dt) && isValid(datum.DO)"}
+      ],
+      "encoding": {
+        "x": {
+          "field": "dt",
+          "type": "temporal",
+          "scale": {"domain": {"param": "brush"}},
+          "axis": {"title": "", "format": "%d %b %H:%M"}
+        },
+        "y": {
+          "field": "DO",
+          "type": "quantitative",
+          "title": "DO (mg/L)"
+        },
+        "tooltip": [
+          {"field": "dt", "type": "temporal", "title": "Date and Time", "format": "%d %b %Y %H:%M"},
+          {"field": "DO", "type": "quantitative", "title": "DO (mg/L)", "format": ".2f"},
+          {"field": "Conductivity", "type": "quantitative", "title": "Conductivity", "format": ","},
+          {"field": "Temp", "type": "quantitative", "title": "Temperature (°C)"}
+        ]
+      }
+    },
+
+    {
+      "width": 500,
+      "height": 70,
+      "mark": {"type": "area", "interpolate": "monotone", "color": "#da4f45"},
+      "title": {"text": "Use this chart to look at a specific time interval", "anchor": "middle", "offset": 15},
+      "params": [
+        {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
+      ],
+      "transform": [
+        {
+          "calculate": "datum.DateTime && (datum.DateTime.length==16 ? toDate(utcParse(datum.DateTime,'%d/%m/%Y %H:%M')) : toDate(utcParse(datum.DateTime,'%d/%m/%Y %H:%M:%S')))",
+          "as": "dt"
+        },
+        {"filter": "isValid(datum.dt) && isValid(datum.DO)"}
+      ],
+      "encoding": {
+        "x": {
+          "field": "dt",
+          "type": "temporal",
+          "axis": {"title": "Date", "format": "%d %b %H:%M"}
+        },
+        "y": {
+          "field": "DO",
+          "type": "quantitative",
+          "title": "DO (mg/L)"
+        },
+        "tooltip": [
+          {"field": "dt", "type": "temporal", "title": "Date and Time", "format": "%d %b %Y %H:%M"},
+          {"field": "DO", "type": "quantitative", "title": "DO (mg/L)", "format": ".2f"},
+          {"field": "Conductivity", "type": "quantitative", "title": "Conductivity", "format": ","},
+          {"field": "Temp", "type": "quantitative", "title": "Temperature (°C)"}
+        ]
+      }
+    }
+  ]
+}

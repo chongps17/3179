@@ -167,17 +167,69 @@
                 <p>
                    Bushfires cause severe damage to Australia's natural ecosystems and wildlife. The proportion of forest to non-forest areas involved in bushfires varies from state to state. Based on the proportional chart, 
                    <strong>Australian Capital Territory, New South Wales, Queensland and Victoria</strong> have the 
-                   highest proportion of forest area burnt in fires recorded between 2019-2020. These four Australian states have had <strong>90% or more</strong>
-                  of their forested areas burnt while states such as South Australia are less.
+                   highest proportion of forest area burnt in fires recorded between 2019-2020. 
+                </p>
+
+                <p>
+                  These four Australian states have had <strong>90% or more</strong>
+                  of their forested areas burnt while states such as South Australia have a lower proportion.
                 </p>
             </div>
         </div>
     </section>
 
     <section>
-        <h2>The impact of fires on water quality</h2>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.</p>
-        <div id = "pie" class = "chart"></div>
+        <h2>The environmental impact of bushfires on aquatic habitats</h2>
+        <div class = "intro-grid">
+          <div>
+            <div id = "area1" class = "chart"></div>
+          </div>
+
+        <div>
+          <p>
+            During bushfires, the oxygen level in bodies of water tend to drop from ashes and other burning materials entering the water.  
+          </p>
+
+          <p>
+            Using Lake Conjola in New South Wales as an example, the dissolved oxygen (DO) levels <strong>fluctates</strong> throughout 
+            the time of recording, going as low as around <strong>6 mg/L</strong>.
+          </p>
+
+          <p>
+            Low oxygen levels can pose harm to aquatic species and cause instability in their environment. Oxygen levels also impact bateria and algae growth which are key
+            parts of aquatic ecosystems.
+          </p>
+
+        </div>
+
+    </section>
+
+    <section>
+      <div class = "intro-grid">
+
+        <div>
+          <p>
+            In addition to fluctuating oxygen levels, bushfires also impact the temperature of bodies of water as a result of excess heat from the fire.
+          </p>
+
+          <p>
+            In contrast to the fluctuating oxygen levels, the example of Lake Conjola in New South Wales shows a steady increase in temperature, with 
+            temperatures of around <strong>25°C</strong> at the beginning of recording to a peak of around <strong>29°C</strong>. 
+          </p>
+
+          <p>
+            In the long term, increases in water temperature can also pose <strong>severe harm</strong> to aquatic species as even an incremental change can impact the livability of the
+            ecosystem which is especially the case for less heat-tolerant species within the water.
+          </p>
+
+        </div>
+
+        <div>
+          <div id = "area2" class = "chart"></div>
+        </div>
+        
+      </div>
+
     </section>
     </div>
 
@@ -187,6 +239,8 @@
         vegaEmbed("#pie", "charts/piechart.vl.json", {actions: false});
         vegaEmbed("#scatter", "charts/scatter.vl.json", {actions: false});
         vegaEmbed("#donut", "charts/donut.vl.json", {actions: false});
+        vegaEmbed("#area1", "charts/area1.vl.json", {actions: false});
+        vegaEmbed("#area2", "charts/area2.vl.json", {actions: false});
     </script>
 
 
