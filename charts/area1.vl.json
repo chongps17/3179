@@ -49,7 +49,7 @@
       ],
       "transform": [
         {
-          "calculate": "datum.DateTime && (datum.DateTime.length==16 ? toDate(utcParse(datum.DateTime,'%d/%m/%Y %H:%M')) : toDate(utcParse(datum.DateTime,'%d/%m/%Y %H:%M:%S')))",
+          "calculate": "toDate(utcParse(datum.DateTime,'%d/%m/%Y %H:%M'))",
           "as": "dt"
         },
         {"filter": "isValid(datum.dt) && isValid(datum.DO)"}

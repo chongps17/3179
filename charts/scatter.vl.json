@@ -19,8 +19,7 @@
   ],
 
   "transform": [
-    { "calculate": "datum.acq_date", "as": "acq_date_str" },
-    { "filter": "datum.acq_date_str == date_selection" },
+    { "filter": "datum.acq_date == date_selection" },
     {
       "calculate": "datum.daynight == 'D' ? 'Day' : 'Night'",
       "as": "DayNightLabel"

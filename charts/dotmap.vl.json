@@ -9,7 +9,7 @@
       "projection": {
         "type": "albers",
         "parallels": [-18, -36],
-        "rotate": [-132, 0]
+        "rotate": [-130, 0]
       },
       "layer": [
         {
