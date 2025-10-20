@@ -26,7 +26,7 @@
       "as": "DayNightLabel"
     }
   ],
-  
+
   "layer": [
     {
       "mark": { "type": "point", "filled": true, "opacity": 0.65, "size": 43 },
@@ -45,10 +45,11 @@
     },
 
     {
-      "mark": { "type": "text", "align": "left", "baseline": "top", "fontSize": 12, "fill": "#333" },
+      "mark": { "type": "text", "fontSize": 16},
       "encoding": {
         "text": {"value": "Brighter hotspots generally have a higher FRP"},
-        "x": {"value": 20}
+        "x": {"value": 500},
+        "y": {"value": 200}
       }
     }
   ]

@@ -58,22 +58,15 @@
     .chart {
       margin-top: 10px;
     }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 24px;
-      align-items: start;
-    }
   
-    .intro-grid {
+    .two-grid {
       display: grid;
       grid-template-columns: 1fr 1fr; 
       gap: 24px;
       align-items: start;
     }
 
-    .intro-grid img {
+    .two-grid img {
       width: 100%;
       height: 260px;            
       border-radius: 10px;
@@ -97,7 +90,7 @@
 
     <section>
         <h2>Introduction</h2>
-        <div class = "intro-grid">
+        <div class = "two-grid">
             <p>Due to Australia's geographical location, bushfires have become a prominent issue for Australians and the environment. These bushfires not 
               only put the lives of Australians at risk but cause severe damage to Australia's wildlife and natural landscapes. This visualisation aims to explore 
               the geographical location of fires across Australia, the characteristics of these fires and how they affect aspects of our enviroment such as our forests 
@@ -115,7 +108,7 @@
     <section>
         <h2>Fires detected across Australia</h2>
         <div id = "dotmap" class = "chart" style = "text-align: center;"></div>
-        <div class = "intro-grid">
+        <div class = "two-grid">
           <p>This map details the location of fires across Australia, with <strong>brightness</strong> indicating the temperature of the fire and 
             <strong>Fire Radiative Power (FRP)</strong> indicating the intensity of the fire based on satellite signals. 
             The time frame of fires shown on the map can be adjusted using the date brushing feature in the bar graph.</p>
@@ -137,7 +130,7 @@
     </section>
 
     <section>
-      <div class = "intro-grid">
+      <div class = "two-grid">
           <div>
             <p>
               Day time fires make up most reported fires in Australia, making up <strong>78.32%</strong> of fires recorded in the data set while nighttime fires only make up <strong>21.68%</strong>. 
@@ -159,7 +152,7 @@
 
     <section>
         <h2>Proportion of forested areas in fires</h2>
-        <div class = "intro-grid">
+        <div class = "two-grid">
             <div>
                 <div id = "stackedbar" class = "chart"></div>
             </div>
@@ -180,7 +173,7 @@
 
     <section>
         <h2>The environmental impact of bushfires on aquatic habitats</h2>
-        <div class = "intro-grid">
+        <div class = "two-grid">
           <div>
             <div id = "area1" class = "chart"></div>
           </div>
@@ -205,7 +198,7 @@
     </section>
 
     <section>
-      <div class = "intro-grid">
+      <div class = "two-grid">
 
         <div>
           <p>
@@ -213,7 +206,7 @@
           </p>
 
           <p>
-            In contrast to the fluctuating oxygen levels, the example of Lake Conjola in New South Wales shows a steady increase in temperature, with 
+            In contrast to the fluctuating oxygen levels, the example of Lake Conjola in New South Wales shows a <strong>steady</strong> increase in temperature, with 
             temperatures of around <strong>25°C</strong> at the beginning of recording to a peak of around <strong>29°C</strong>. 
           </p>
 
@@ -231,6 +224,31 @@
       </div>
 
     </section>
+
+    </div>
+
+    <div class = "container">
+      <div>
+        <p>
+          <strong>Data Visualisation 2:</strong> Australian Bushfires
+        </p>
+
+        <p>
+          <strong>Author:</strong> Patrick Chong
+        </p>
+
+        <p>
+          <strong>Date:</strong> 20 October 2025
+        </p>
+
+        <p>
+          <strong>Data Sources:</strong>
+        </p>
+        
+        <p class = "image-source"> Source 1: <a href="https://www.kaggle.com/datasets/carlosparadis/fires-from-space-australia-and-new-zeland?select=fire_nrt_M6_96619.csv">Kaggle - Fires from space: Australia</a></p>
+        <p class = "image-source"> Source 2: <a href="https://www.agriculture.gov.au/abares/forestsaustralia/forest-data-maps-and-tools/data-by-topic/fire#area-of-native-forest-in-fire-area-by-forest-tenure-and-jurisdiction-201920">Australian Government - Department of Agriculture, Fisheries and Forestry: Australian Bushfires</a></p>       
+        <p class = "image-source"> Source 3: <a href="https://data.gov.au/data/dataset/nsw-bushfire-impact-water-quality#">Data.gov.au - Bushfire impact water quality</a></p>
+      </div>
     </div>
 
     <script>
