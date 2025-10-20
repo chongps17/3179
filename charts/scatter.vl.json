@@ -26,19 +26,30 @@
       "as": "DayNightLabel"
     }
   ],
+  
+  "layer": [
+    {
+      "mark": { "type": "point", "filled": true, "opacity": 0.65, "size": 43 },
+      "encoding": {
+        "x": { "field": "brightness", "type": "quantitative", "title": "Brightness (K)", "scale": { "domain": [260, 480] } },
+        "y": { "field": "frp", "type": "quantitative", "title": "Fire Radiative Power (FRP)" },
+        "color": { "field": "DayNightLabel", "type": "nominal", "title": "Time of Detection", "scale": { "range": ["#da4f45", "#428bd4"] } },
+        "tooltip": [
+          { "field": "acq_date", "title": "Date" },
+          { "field": "brightness", "title": "Brightness" },
+          { "field": "frp", "title": "Fire Radiative Power (FRP)" },
+          { "field": "satellite", "title": "Satellite" },
+          { "field": "DayNightLabel", "title": "Time of Detection" }
+        ]
+      }
+    },
 
-  "mark": {"type": "point", "filled": true, "opacity": 0.65, "size": 43},
-
-  "encoding": {
-    "x": { "field": "brightness", "type": "quantitative", "title": "Brightness (K)", "scale": {"domain": [260, 480]} },
-    "y": { "field": "frp", "type": "quantitative", "title": "Fire Radiative Power (FRP)" },
-    "color": { "field": "DayNightLabel", "type": "nominal", "title": "Time of Detection", "scale": {"range": ["#da4f45", "#428bd4"] }},
-    "tooltip": [
-      {"field": "acq_date", "title": "Date"},
-      {"field": "brightness", "title": "Brightness"},
-      {"field": "frp", "title": "Fire Radiative Power (FRP)"},
-      {"field": "satellite", "title": "Satellite"},
-      {"field": "DayNightLabel", "title": "Time of Detection"}
-    ]
-  }
+    {
+      "mark": { "type": "text", "align": "left", "baseline": "top", "fontSize": 12, "fill": "#333" },
+      "encoding": {
+        "text": {"value": "Brighter hotspots generally have a higher FRP"},
+        "x": {"value": 20}
+      }
+    }
+  ]
 }

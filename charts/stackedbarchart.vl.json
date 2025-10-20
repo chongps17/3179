@@ -13,7 +13,7 @@
   "mark": "bar",
   "encoding": {
     "y": {"field": "state", "type": "nominal", "title": "State"},
-    "x": {"field": "area_value", "type": "quantitative", "title": "Area (km²)", "stack": "normalize"},
+    "x": {"field": "area_value", "type": "quantitative", "title": "Area ('000 Hectares)", "stack": "normalize"},
     "color": {
       "field": "area_type",
       "type": "nominal",
